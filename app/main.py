@@ -12,9 +12,6 @@ app = FastAPI()
 def zone_apex():
 <<<<<<< HEAD
     return {"Hello": "Today, I am Raj."} #{} means in .json language
-=======
-    return {"Good Day": "Sunshine!"}
->>>>>>> 58405aa0f07a302ae6d66260c967c92d0d861445
 
 @app.get("/sum/{a}/{b}")
 def add(a: int, b: int):
