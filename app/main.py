@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.get("/")  # zone apex
 def zone_apex():
-    return {"Good Day": "Sunshine"} #{} means in .json language
+    return {"Hello": "Today, I am Raj."} #{} means in .json language
 
 @app.get("/add/{a}/{b}")
 def add(a: int, b: int):
@@ -19,3 +19,7 @@ def add(a: int, b: int):
 @app.get("/multiply/{c}/{d}")
 def add(c:int,d:int):
     return{"result": c*d}
+
+@app.get("/square/{a}")
+def square(a: int):
+    return{"result": a*a}
