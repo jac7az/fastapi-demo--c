@@ -7,17 +7,4 @@ os
 # pymongo
 # dnspython
 # mysqlclient
-#pip install mysql-connector-python
-mysql.connector
-from mysql.connector import Error
-
-DBHOST = "ds2022.cqee4iwdcaph.us-east-1.rds.amazonaws.com"
-DBUSER = "admin"
-DBPASS = ""
-DB = "jac7az"
-
-#export DBPASS='sds_class27'
-os.environ["DBPASS"] = 'sds_class27'
-
-db = mysql.connector.connect(user=DBUSER, host=DBHOST, password=DBPASS, database=DB)
-cur=db.cursor()
+pip install mysql-connector-python
