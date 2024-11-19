@@ -4,7 +4,4 @@ typing
 pydantic
 pandas
 os
-# pymongo
-# dnspython
-# mysqlclient
 mysql-connector-python

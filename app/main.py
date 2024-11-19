@@ -45,8 +45,9 @@ def get_genres():
         return {"Error": "MySQL Error: " + str(e)}
     
 @app.get('/songs')
-def songs():
-    query = "SELECT * FROM songs ORDER BY id;"
+def get_songs():
+    query="SELECT songs.title,songs.album,songs.artist,songs.year,songs.file,songs.image,genres.genre FROM songs JOIN genres ON songs.genre=genres.genreid ORDER BY songs.id;"
+    
     try:    
         cur.execute(query)
         headers=[x[0] for x in cur.description]
