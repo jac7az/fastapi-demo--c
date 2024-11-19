@@ -8,15 +8,6 @@ import os
 import mysql.connector
 from mysql.connector import Error
 
-DBHOST = "ds2022.cqee4iwdcaph.us-east-1.rds.amazonaws.com"
-DBUSER = "admin"
-DBPASS = os.getenv('DBPASS')
-DB = "jac7az"
-db = mysql.connector.connect(user=DBUSER, host=DBHOST, password=DBPASS, database=DB)
-cur=db.cursor()
-
-api = FastAPI()
-
 app = FastAPI()
 from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
@@ -58,3 +49,10 @@ def get_songs():
         return(json_data)
     except Error as e:
         return {"Error": "MySQL Error: " + str(e)}
+    
+DBHOST = "ds2022.cqee4iwdcaph.us-east-1.rds.amazonaws.com"
+DBUSER = "admin"
+DBPASS = os.getenv('DBPASS')
+DB = "jac7az"
+db = mysql.connector.connect(user=DBUSER, host=DBHOST, password=DBPASS, database=DB)
+cur=db.cursor()
