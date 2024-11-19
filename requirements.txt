@@ -7,4 +7,4 @@ os
 # pymongo
 # dnspython
 # mysqlclient
-pip install mysql-connector-python
+mysql-connector-python
