@@ -17,6 +17,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+DBHOST = "ds2022.cqee4iwdcaph.us-east-1.rds.amazonaws.com"
+DBUSER = "admin"
+DBPASS = os.getenv('DBPASS')
+DB = "jac7az"
+db = mysql.connector.connect(user=DBUSER, host=DBHOST, password=DBPASS, database=DB)
+cur=db.cursor()
+
 @app.get("/")  # zone apex
 def zone_apex():
     return {"Hello": "World"} #{} means in .json language
@@ -49,10 +56,3 @@ def get_songs():
         return(json_data)
     except Error as e:
         return {"Error": "MySQL Error: " + str(e)}
-    
-DBHOST = "ds2022.cqee4iwdcaph.us-east-1.rds.amazonaws.com"
-DBUSER = "admin"
-DBPASS = os.getenv('DBPASS')
-DB = "jac7az"
-db = mysql.connector.connect(user=DBUSER, host=DBHOST, password=DBPASS, database=DB)
-cur=db.cursor()
